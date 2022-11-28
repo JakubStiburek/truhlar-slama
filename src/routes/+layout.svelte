@@ -1,5 +1,21 @@
 <script>
     import "../app.css";
+    import Language from "../components/language.svelte"
+    import * as cs from "../localization/cs.json"
+    import * as en from "../localization/en.json"
+
+    let localization = cs;
+    let key = en.key;
+
+    const switchLocalization = () => {
+        if (localization === cs) {
+            localization = en;
+            key = cs.key;
+        } else {
+            localization = cs;
+            key = en.key;
+        }
+    }
 </script>
 
 <svelte.head>
@@ -14,10 +30,14 @@
 </svelte.head>
 
 <div class="bg-gradient-to-r from-teal-100 via-teal-300 to-teal-100">
-  <div class="flex justify-between items-center w-max h-max p-5 m-auto text-3xl gap-5">
-    <a href="/store" class="hover:underline">store</a>
-    <a href="/custom" class="hover:underline">custom</a>
-    <a href="/slama" class="hover:underline">slama</a>
+  <div class="flex justify-between items-center mx-5">
+    <div></div>
+    <div class="flex justify-between items-center w-max h-max p-5 m-auto text-3xl gap-5">
+      <a href="/store" class="hover:underline">{localization.layout.store}</a>
+      <a href="/custom" class="hover:underline">{localization.layout.custom}</a>
+      <a href="/slama" class="hover:underline">{localization.layout.slama}</a>
+    </div>
+    <button class="" on:click={() => switchLocalization()}><Language key={key}/></button>
   </div>
 </div>
 
