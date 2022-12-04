@@ -10,7 +10,7 @@
         <h2 class="sm:text-3xl text-2xl text-left pb-3">
             Truhlář Ondřej Sláma
         </h2>
-        <p class="text-left sm:w-[540px] max-w-fit sm:text-2xl">
+        <p class="text-left sm:w-[540px] w-[320px] max-w-fit sm:text-2xl">
             Nunc vehicula ultricies gravida. In ullamcorper pulvinar bibendum. Donec sit amet aliquet felis, vitae
             lobortis dolor. Etiam molestie sed nibh sit amet faucibus. Orci varius natoque penatibus et magnis dis
             parturient montes, nascetur ridiculus mus.
