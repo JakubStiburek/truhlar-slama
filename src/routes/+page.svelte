@@ -11,9 +11,7 @@
             Truhlář Ondřej Sláma
         </h2>
         <p class="text-left sm:w-[540px] w-[320px] max-w-fit sm:text-2xl">
-            Nunc vehicula ultricies gravida. In ullamcorper pulvinar bibendum. Donec sit amet aliquet felis, vitae
-            lobortis dolor. Etiam molestie sed nibh sit amet faucibus. Orci varius natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus.
+            Chcete mít doma unikátní kousek nábytku? Jsem Váš truhlář. Prohlédněte si moji práci a kontaktujte mě, pokud chcete obohatit svůj domov.
         </p>
     </div>
     <div class="flex flex-col justify-center items-start sm:p-10 p-6 sm:text-2xl">
