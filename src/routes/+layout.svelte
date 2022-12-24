@@ -11,19 +11,20 @@
 
         body {
             font-family: 'Montserrat';
-            background-color: rgb(204 251 241);
+            background-color: rgb(193, 182, 68);
+            color: rgb(255, 215, 175)
         }
     </style>
 </svelte.head>
 
-<div class='bg-gradient-to-r from-teal-100 via-teal-300 to-teal-100'>
+<div class='dark-background'>
     <div class='flex justify-start items-center mx-5 gap-5'>
         <div class='w-max h-max'>
             <Logo/>
         </div>
         <div>
             <a href='/'>
-                <p class='sm:text-4xl text-2xl'>
+                <p class='sm:text-5xl text-3xl'>
                     Truhlář Sláma
                 </p>
             </a>
@@ -33,7 +34,7 @@
 
 <slot/>
 
-<div class='bg-gradient-to-r from-teal-100 via-teal-300 to-teal-100 h-max flex sm:flex-row flex-col justify-center items-center mx-auto'>
+<div class='h-max flex sm:flex-row flex-col justify-center items-center mx-auto dark-background'>
     <div class="p-5">
         <Contacts/>
     </div>
@@ -41,4 +42,10 @@
         <p>Created by Jakub Stibůrek</p>
     </div>
 </div>
+
+<style>
+    .dark-background {
+        background-color: rgb(161, 97, 46);
+    }
+</style>
 
