@@ -38,8 +38,8 @@
     <div class="p-5">
         <Contacts/>
     </div>
-    <div class="sm:border-l sm:border-t-0 border-t border-solid sm:border-l-teal-100 border-t-teal-100 p-5">
-        <p>Created by Jakub Stibůrek</p>
+    <div class="sm:border-l sm:border-t-0 border-t border-solid sm:border-l-teal-100 border-t-teal-100 p-5 hover:text-blue-400">
+        <a href="https://www.linkedin.com/in/jakubstiburekdev/">Created by Jakub Stibůrek</a>
     </div>
 </div>
 
