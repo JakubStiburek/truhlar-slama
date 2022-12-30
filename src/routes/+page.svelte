@@ -1,5 +1,7 @@
 <script>
     import Contacts from "../components/Contacts.svelte";
+    
+    export const prerender = true;
 </script>
 
 <div class="grid 2xl:grid-cols-2 grid-cols-1 justify-center w-max mx-auto mt-3">
