@@ -2,6 +2,10 @@
     import '../app.css';
     import Logo from '../components/Logo.svelte';
     import Contacts from "../components/Contacts.svelte";
+
+    export const prerender = true;
+
+    export let data;
 </script>
 
 <svelte.head>
@@ -19,7 +23,7 @@
 <div class='dark-background'>
     <div class='flex justify-start items-center mx-5 gap-5'>
         <div class='w-max h-max'>
-            <Logo/>
+            <Logo src={data.logoSrc}/>
         </div>
         <div>
             <a href='/'>
