@@ -3,7 +3,7 @@ import { CLOUDINARY_KEY, CLOUDINARY_NAME, CLOUDINARY_SECRET } from "$env/static/
 import { format } from "@cloudinary/url-gen/actions/delivery";
 import { Format } from "@cloudinary/url-gen/qualifiers";
 
-export const cloudinary = new Cloudinary({
+const cloudinary = new Cloudinary({
     cloud: {
         cloudName: `${CLOUDINARY_NAME}`,
         apiKey: `${CLOUDINARY_KEY}`,
