@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <div class="mb-auto mx-auto">
+    <div class="mb-auto mx-auto text-black">
         <slot/>
     </div>
 
