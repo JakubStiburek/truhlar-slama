@@ -44,7 +44,7 @@
                 <Contacts/>
             </div>
             <div class="p-5 hover:text-blue-400">
-                <a href="https://www.linkedin.com/in/jakubstiburekdev/">Created by Jakub Stibůrek</a>
+                <a href="https://stiburek.dev">Web vytvořil Jakub Stibůrek</a>
             </div>
         </div>
     </div>

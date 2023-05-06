@@ -16,7 +16,8 @@
         <img class="w-[323px] sm:w-[540px]"
              width={mobile ? "323" : "540"}
              height={mobile ? "430.66" : "720"}
-             src={mobile ? data.stoolDetailMobile : data.stoolDetail} alt="night stand">
+             src={mobile ? data.mobileImagesUrlList[0] : data.desktopImagesUrlList[0]}
+             alt="night stand">
     </div>
     <div class="flex flex-col items-start justify-center p-6 sm:p-10">
         <h2 class="pb-3 text-left text-2xl text-black sm:text-3xl">
@@ -33,52 +34,27 @@
         </h2>
         <Contacts/>
     </div>
-    <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-        <img class="w-[323px] sm:w-[540px]"
-             width={mobile ? "323" : "540"}
-             height={mobile ? "430.66" : "720"}
-             src={mobile ? data.nightStandDetailMobile : data.nightStandDetail}
-             alt="night stand wip">
-    </div>
-    <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-        <img class="w-[323px] sm:w-[540px]"
-             width={mobile ? "323" : "540"}
-             height={mobile ? "430.66" : "720"}
-             src={mobile ? data.nightStandMobile : data.nightStand} alt="soap bars">
-    </div>
-    <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-        <img class="w-[323px] sm:w-[540px]"
-             width={mobile ? "323" : "540"}
-             height={mobile ? "430.66" : "720"}
-             src={mobile ? data.nightStandOpenMobile : data.nightStandOpen}
-             alt="bread box">
-    </div>
-    <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-        <img class="w-[323px] sm:w-[540px]"
-             width={mobile ? "323" : "540"} src={mobile ? data.stoolMobile : data.stool}
-             height={mobile ? "430.66" : "720"}
-             alt="lid">
-    </div>
-    <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-        <img class="w-[323px] sm:w-[540px]"
-             width={mobile ? "323" : "540"}
-             height={mobile ? "430.66" : "720"}
-             src={mobile ? data.stoolDetailFullMobile : data.stoolDetailFull}
-             alt="shave stand">
-    </div>
-    <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-        <img class="w-[323px] sm:w-[540px]"
-             width={mobile ? "323" : "540"}
-             height={mobile ? "430.66" : "720"}
-             src={mobile ? data.stoolWithPersonMobile : data.stoolWithPerson}
-             alt="shave stand">
-    </div>
-    <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-        <img class="w-[323px] sm:w-[540px]"
-             width={mobile ? "323" : "540"}
-             height={mobile ? "430.66" : "720"}
-             src={mobile ? data.stoolDetailMobile : data.stoolDetail} alt="night stand">
-    </div>
+    {#if mobile}
+        {#each [...data.mobileImagesUrlList.slice(1), data.mobileImagesUrlList[0]] as imageSrc}
+            <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
+                <img class="w-[323px] sm:w-[540px]"
+                     width="323"
+                     height="430"
+                     src={imageSrc}
+                     alt="product image">
+            </div>
+        {/each}
+    {:else}
+        {#each [...data.desktopImagesUrlList.slice(1), data.desktopImagesUrlList[0]] as imageSrc}
+            <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
+                <img class="w-[323px] sm:w-[540px]"
+                     width="540"
+                     height="720"
+                     src={imageSrc}
+                     alt="product image">
+            </div>
+        {/each}
+    {/if}
 </div>
 
 <style>
