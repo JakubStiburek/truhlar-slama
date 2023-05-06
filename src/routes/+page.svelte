@@ -2,8 +2,6 @@
     import Contacts from "../components/Contacts.svelte";
     import {browser} from '$app/environment';
 
-    export const prerender = true;
-
     export let data;
 
     let mobile = false;

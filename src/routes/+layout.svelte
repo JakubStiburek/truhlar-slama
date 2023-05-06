@@ -3,8 +3,6 @@
     import Logo from '../components/Logo.svelte';
     import Contacts from "../components/Contacts.svelte";
 
-    export const prerender = true;
-
     export let data;
 </script>
 
