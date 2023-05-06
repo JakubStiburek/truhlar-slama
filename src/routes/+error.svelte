@@ -5,4 +5,4 @@
     <p class="text-2xl">
         Stránka nenalezena.
     </p>
-</div>
+</div> 

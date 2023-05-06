@@ -20,15 +20,15 @@
     </style>
 </svelte.head>
 
-<div class="h-screen flex flex-col justify-between">
+<div class="flex h-screen flex-col justify-between">
     <div class='dark-background'>
-        <div class='flex justify-start items-center mx-5 gap-5'>
-            <div class='w-max h-max'>
+        <div class='mx-5 flex items-center justify-start gap-5'>
+            <div class='h-max w-max'>
                 <Logo src={data.logoSrc}/>
             </div>
             <div>
                 <a href='/'>
-                    <p class='sm:text-5xl text-3xl'>
+                    <p class='text-3xl sm:text-5xl'>
                         Truhlář Sláma
                     </p>
                 </a>
@@ -36,13 +36,13 @@
         </div>
     </div>
 
-    <div class="mb-auto mx-auto text-black">
+    <div class="mx-auto mb-auto text-black">
         <slot/>
     </div>
 
-    <div class='flex flex-col justify-center items-center dark-background'>
-        <div class="w-max h-max">
-            <div class="p-5 border-b border-solid border-t-teal-100 ">
+    <div class='flex flex-col items-center justify-center dark-background'>
+        <div class="h-max w-max">
+            <div class="border-b border-solid border-t-teal-100 p-5">
                 <Contacts/>
             </div>
             <div class="p-5 hover:text-blue-400">

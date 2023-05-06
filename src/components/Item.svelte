@@ -8,7 +8,7 @@
     export let mobile = false;
 </script>
 
-<div class="p-5 light-background rounded-2xl">
+<div class="rounded-2xl p-5 light-background">
     <img
             class="sm:w-[540px] w-[323px]"
             width={mobile ? "323" : "540"}
