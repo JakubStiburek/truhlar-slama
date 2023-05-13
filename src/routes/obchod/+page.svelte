@@ -1,8 +1,27 @@
 <script>
     import Item from "../../components/Item.svelte";
     import {browser} from "$app/environment";
+    import products from "../../products/products.ts"
 
-    export let data;
+    const sortProducts = (products) => {
+        return products.sort((a,b) => {
+            let score = 0;
+
+            if (a.amount >= b.amount) {
+                score = score - 1;
+            } else {
+                score = score + 1;
+            }
+
+            if (a.price >= b.price) {
+                score = score - 1;
+            }  else {
+                score = score + 1;
+            }
+
+            return score;
+        })
+    }
 
     let mobile = false;
 
@@ -11,35 +30,19 @@
     }
 </script>
 
-<div class="mx-auto flex flex-col items-center justify-center p-5 sm:max-w-[1240px] max-w-[612px]">
-    <h1 class="text-4xl">Obchod</h1>
-    <p class="text-center text-2xl">Prohlédněte si zboží připravené k odběru nebo kousky, které již mají majitele. Objednávejte telefonicky nebo emailem.</p>
-<!--    <div class="mx-auto mt-3 grid w-max grid-cols-1 justify-center gap-5 2xl:grid-cols-2">-->
-<!--        <Item-->
-<!--                src={mobile ? data.stoolMobile : data.stool}-->
-<!--                title="Stolička"-->
-<!--                description="Trojnožka vyrobená z dubového masívu. Ošetřená olejem."-->
-<!--                price=2800-->
-<!--                available=true-->
-<!--                amount=3-->
-<!--                mobile={mobile}-->
-<!--        />-->
-<!--        <Item-->
-<!--                src={mobile ? data.stoolMobile : data.stool}-->
-<!--                title="Stolička typ 3"-->
-<!--                description="Trojnožka vyrobená z dubového masívu. Ošetřená olejem."-->
-<!--                price=3000-->
-<!--                available=true-->
-<!--                amount=15-->
-<!--                mobile={mobile}-->
-<!--        />-->
-<!--        <Item-->
-<!--                src={mobile ? data.stoolMobile : data.stool}-->
-<!--                title="Stolička typ 2"-->
-<!--                description="Trojnožka vyrobená z dubového masívu. Ošetřená olejem."-->
-<!--                price=2800-->
-<!--                amount=3-->
-<!--                mobile={mobile}-->
-<!--        />-->
-<!--    </div>-->
+<div class="mx-auto flex flex-col items-center justify-center sm:max-w-[1240px] max-w-[368px]">
+    <h1 class="sm:text-4xl text-2xl mt-2">Obchod</h1>
+    <p class="text-center sm:text-2xl text-center text-[0.8rem]">Prohlédněte si zboží připravené k odběru nebo kousky, které již mají majitele. Objednávejte telefonicky nebo emailem.</p>
+    <div class="grid md:grid-cols-2 gap-4 mt-5 mb-5 sm:grid-cols-1">
+        {#each sortProducts(products) as product}
+            <Item
+                    thumbnail={product.thumbnail}
+                    title={product.title}
+                    description={product.description}
+                    amount={product.amount}
+                    price={product.price}
+                    mobile={mobile}
+            />
+        {/each}
+    </div>
 </div>
