@@ -34,7 +34,7 @@
                 </div>
                 <p class="text-3xl">·</p>
                 <button>
-                    <a href='/obchod'>
+                    <a href='/vyrobky'>
                         <p class='text-3xl hover:text-blue-400'>
                             Výrobky
                         </p>

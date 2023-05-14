@@ -11,7 +11,7 @@
     }
 </script>
 
-<div class="mx-auto mt-3 grid w-max grid-cols-1 justify-center 2xl:grid-cols-2">
+<div class="mx-auto mt-3 w-max grid grid-cols-1 justify-center items-center xl:grid-cols-2">
     <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
         <img class="w-[323px] sm:w-[540px]"
              width={mobile ? "323" : "540"}

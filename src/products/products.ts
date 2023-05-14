@@ -1,5 +1,6 @@
 const products = [
   {
+    id: "test_dub_lak_01",
     title: "Dubový test lakovaný",
     description: "Morbi tellus urna, sagittis hendrerit auctor eu, porttitor at ipsum. Praesent nec vehicula elit. Quisque et imperdiet diam, ac eleifend augue. Pellentesque vitae dui et ex iaculis egestas nec ut erat. In venenatis libero eget eros mattis, ac commodo ex gravida. Nunc aliquam ante et odio viverra posuere.",
     price: 1001,
@@ -9,6 +10,7 @@ const products = [
     detail_02: "https://res.cloudinary.com/dws5jjmgt/image/upload/v1684004048/truhlarslama.cz/products/test_dub_lak_01/test_dub_lak_01_detail_02.jpg",
   },
   {
+    id: "test_dub_lak_02",
     title: "Dubový test lakovaný",
     description: "Morbi tellus urna, sagittis hendrerit auctor eu, porttitor at ipsum. Praesent nec vehicula elit. Quisque et imperdiet diam, ac eleifend augue. Pellentesque vitae dui et ex iaculis egestas nec ut erat. In venenatis libero eget eros mattis, ac commodo ex gravida. Nunc aliquam ante et odio viverra posuere.",
     price: 1005,
@@ -18,6 +20,7 @@ const products = [
     detail_02: "https://res.cloudinary.com/dws5jjmgt/image/upload/v1684004048/truhlarslama.cz/products/test_dub_lak_01/test_dub_lak_01_detail_02.jpg",
   },
   {
+    id: "test_dub_lak_03",
     title: "Dubový test lakovaný",
     description: "Morbi tellus urna, sagittis hendrerit auctor eu, porttitor at ipsum. Praesent nec vehicula elit. Quisque et imperdiet diam, ac eleifend augue. Pellentesque vitae dui et ex iaculis egestas nec ut erat. In venenatis libero eget eros mattis, ac commodo ex gravida. Nunc aliquam ante et odio viverra posuere.",
     price: 100,
@@ -27,6 +30,7 @@ const products = [
     detail_02: "https://res.cloudinary.com/dws5jjmgt/image/upload/v1684004048/truhlarslama.cz/products/test_dub_lak_01/test_dub_lak_01_detail_02.jpg",
   },
   {
+    id: "test_dub_lak_04",
     title: "Dubový test lakovaný",
     description: "Morbi tellus urna, sagittis hendrerit auctor eu, porttitor at ipsum. Praesent nec vehicula elit. Quisque et imperdiet diam, ac eleifend augue. Pellentesque vitae dui et ex iaculis egestas nec ut erat. In venenatis libero eget eros mattis, ac commodo ex gravida. Nunc aliquam ante et odio viverra posuere.",
     price: 1006,
@@ -36,6 +40,7 @@ const products = [
     detail_02: "https://res.cloudinary.com/dws5jjmgt/image/upload/v1684004048/truhlarslama.cz/products/test_dub_lak_01/test_dub_lak_01_detail_02.jpg",
   },
   {
+    id: "test_dub_lak_05",
     title: "Dubový test lakovaný",
     description: "Morbi tellus urna, sagittis hendrerit auctor eu, porttitor at ipsum. Praesent nec vehicula elit. Quisque et imperdiet diam, ac eleifend augue. Pellentesque vitae dui et ex iaculis egestas nec ut erat. In venenatis libero eget eros mattis, ac commodo ex gravida. Nunc aliquam ante et odio viverra posuere.",
     price: 1000,
@@ -45,6 +50,7 @@ const products = [
     detail_02: "https://res.cloudinary.com/dws5jjmgt/image/upload/v1684004048/truhlarslama.cz/products/test_dub_lak_01/test_dub_lak_01_detail_02.jpg",
   },
   {
+    id: "test_dub_lak_05",
     title: "Dubový test lakovaný",
     description: "Morbi tellus urna, sagittis hendrerit auctor eu, porttitor at ipsum. Praesent nec vehicula elit. Quisque et imperdiet diam, ac eleifend augue. Pellentesque vitae dui et ex iaculis egestas nec ut erat. In venenatis libero eget eros mattis, ac commodo ex gravida. Nunc aliquam ante et odio viverra posuere.",
     price: 1000,

@@ -1,23 +1,20 @@
 <script>
     export let thumbnail = "";
     export let title = "";
-    export let description = "";
     export let price = 0;
     export let amount = 0;
-    export let mobile = false;
 </script>
 
-<div class="rounded p-3 light-background max-w-max hover:drop-shadow-2xl">
+<div class="rounded p-3 light-background h-max max-w-max hover:drop-shadow-2xl">
     <img
-            class="sm:w-[540px] w-[323px]"
-            width={mobile ? "323" : "540"}
-            height={mobile ? "323" : "540"}
+            class="w-[323px]"
+            width="323"
+            height="323"
             src={thumbnail} />
-    <div class="mt-5 sm:w-[540px] w-[323px]">
-        <h3 class="pb-5 text-2xl">{title}</h3>
-        <p class="pb-5 text-justify">{description}</p>
-        <p class="font-bold text-2xl text-color slama-color">{price} Kč</p>
-        <p>{amount > 0 ? `K dispozici ${amount} ks` : "Není dostupné"}</p>
+    <div class="mt-5 w-[323px]">
+        <h3 class="pb-5 text-md">{title}</h3>
+        <p class="font-bold text-md text-color slama-color">{price} Kč</p>
+        <p class="text-sm">{amount > 0 ? `K dispozici ${amount} ks` : "Není dostupné"}</p>
     </div>
 </div>
 
