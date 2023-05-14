@@ -24,12 +24,22 @@
             <div class='h-max w-max'>
                 <Logo src={data.logoSrc}/>
             </div>
-            <div>
-                <a href='/'>
-                    <p class='text-3xl sm:text-5xl'>
-                        Truhlář Sláma
-                    </p>
-                </a>
+            <div class="flex items-end justify-start gap-2">
+                <div>
+                    <a href='/'>
+                        <p class='text-3xl sm:text-5xl hover:text-blue-400'>
+                            Truhlář Sláma
+                        </p>
+                    </a>
+                </div>
+                <p class="text-3xl">·</p>
+                <button>
+                    <a href='/obchod'>
+                        <p class='text-3xl hover:text-blue-400'>
+                            Výrobky
+                        </p>
+                    </a>
+                </button>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@
     export let mobile = false;
 </script>
 
-<div class="rounded p-3 light-background max-w-max">
+<div class="rounded p-3 light-background max-w-max hover:drop-shadow-2xl">
     <img
             class="sm:w-[540px] w-[323px]"
             width={mobile ? "323" : "540"}
