@@ -1,9 +1,23 @@
-<script>
+<script lang="ts">
     import '../app.css';
     import Logo from '../components/Logo.svelte';
     import Contacts from "../components/Contacts.svelte";
+    import Burger from "../components/Burger.svelte";
+    import {browser} from "$app/environment";
 
     export let data;
+
+    let isMobileMenuOpen = false;
+
+    const toggleMobileMenu = () => {
+        isMobileMenuOpen = !isMobileMenuOpen;
+    }
+
+    let mobile = false;
+
+    if (browser) {
+        mobile = window.matchMedia("(max-width: 640px)").matches;
+    }
 </script>
 
 <svelte.head>
@@ -18,30 +32,54 @@
     </style>
 </svelte.head>
 
-<div class="flex h-screen flex-col justify-between">
-    <div class='dark-background'>
-        <div class='mx-5 flex items-center justify-start gap-5'>
-            <div class='h-max w-max'>
-                <Logo src={data.logoSrc}/>
-            </div>
-            <div class="flex items-end justify-start gap-2">
-                <div>
-                    <a href='/'>
-                        <p class='text-3xl sm:text-5xl hover:text-blue-400'>
-                            Truhlář Sláma
-                        </p>
-                    </a>
+<div class="flex h-screen flex-col justify-between mt-20">
+    <div class="absolute w-[100%] top-0">
+        <div class='dark-background'>
+            <div class={`mx-5 flex items-center gap-5 ${mobile ? 'items-center justify-between' : 'items-start justify-start'}`}>
+                <div class='h-max w-max'>
+                    <Logo src={data.logoSrc}/>
                 </div>
-                <p class="text-3xl">·</p>
-                <button>
+                {#if !mobile}
+                    <div>
+                        <a href='/'>
+                            <p class='text-3xl sm:text-5xl hover:text-blue-400'>
+                                Truhlář Sláma
+                            </p>
+                        </a>
+                    </div>
+                {/if}
+                {#if mobile}
+                    <button on:click={toggleMobileMenu}>
+                        <Burger/>
+                    </button>
+                {:else}
+                    <p class="text-3xl">·</p>
                     <a href='/vyrobky'>
                         <p class='text-3xl hover:text-blue-400'>
                             Výrobky
                         </p>
                     </a>
-                </button>
+                {/if}
             </div>
         </div>
+        {#if isMobileMenuOpen}
+            <ul class="dark-background border-t border-amber-100 flex-col flex justify-center items-center gap-4 p-5">
+                <li on:click={toggleMobileMenu}>
+                    <a href='/'>
+                        <p class='text-xl hover:text-blue-400'>
+                            Domů
+                        </p>
+                    </a>
+                </li>
+                <li on:click={toggleMobileMenu}>
+                    <a href='/vyrobky'>
+                        <p class='text-xl hover:text-blue-400'>
+                            Výrobky
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        {/if}
     </div>
 
     <div class="mx-auto mb-auto text-black">
