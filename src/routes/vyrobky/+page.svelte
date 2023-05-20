@@ -1,10 +1,15 @@
-<script>
+<script lang="ts">
     import Item from "../../components/Item.svelte";
     import {browser} from "$app/environment";
     import products from "../../products/products.ts"
 
-    const sortProducts = (products) => {
-        return products.sort((a,b) => {
+    enum SortBy {
+        Price = 'price',
+        Amount = 'amount'
+    }
+
+    const sortByAmount = (products) => {
+        return products.sort((a, b) => {
             let score = 0;
 
             if (a.amount >= b.amount) {
@@ -13,14 +18,38 @@
                 score = score + 1;
             }
 
+            return score;
+        })
+    }
+
+    const sortByPrice = (products) => {
+        return products.sort((a, b) => {
+            let score = 0;
+
             if (a.price >= b.price) {
                 score = score - 1;
-            }  else {
+            } else {
                 score = score + 1;
             }
 
             return score;
         })
+    }
+
+    const sortProducts = (products, sortyBy: SortBy) => {
+        if (sortyBy === SortBy.Price) {
+            return sortByPrice(products);
+        }
+
+        if (sortyBy === SortBy.Amount) {
+            return sortByAmount(products);
+        }
+    }
+
+    let sortControl = SortBy.Price;
+
+    const switchSorting = (sortBy: SortBy) => {
+        sortControl = sortBy;
     }
 
     let mobile = false;
@@ -30,10 +59,22 @@
     }
 </script>
 
-<div class="mx-auto flex flex-col items-center justify-center xl:w-[1100px] sm:w-[650px] w-[368px]">
-    <p class="mt-2 text-center sm:text-2xl text-[0.8rem]">Prohlédněte si zboží připravené k odběru nebo kousky, které již mají majitele. Objednávejte telefonicky nebo emailem.</p>
+<div class="mx-auto flex flex-col items-center justify-center xl:w-[1100px] sm:w-[650px] w-[368px] gap-2">
+    <p class="mt-2 text-center sm:text-2xl text-[0.8rem]">Prohlédněte si zboží připravené k odběru nebo kousky, které
+        již mají majitele. Objednávejte telefonicky nebo emailem.</p>
+    <div class="flex sm:flex-row gap-2 items-center justify-end flex-col">
+        <button class="border p-1 rounded light-background"
+                on:click={switchSorting(SortBy.Price)}>
+            Seřadit podle ceny
+        </button>
+        <button class="border p-1 rounded light-background"
+                on:click={switchSorting(SortBy.Amount)}>
+            Seřadit podle
+            dostupnosti
+        </button>
+    </div>
     <div class="grid xl:grid-cols-3 gap-4 mt-5 mb-5 md:grid-cols-2 grid-cols-1">
-        {#each sortProducts(products) as product}
+        {#each sortProducts(products, sortControl) as product}
             <a href={`/vyrobky/${product.id}`}>
                 <Item
                         thumbnail={product.thumbnail}
@@ -46,3 +87,9 @@
         {/each}
     </div>
 </div>
+
+<style>
+    .light-background {
+        background-color: rgb(255, 215, 175);
+    }
+</style>
