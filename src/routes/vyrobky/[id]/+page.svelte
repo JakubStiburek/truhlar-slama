@@ -12,7 +12,7 @@
 
 <div class="mx-auto mt-5 flex flex-col items-center justify-center gap-4 xl:w-[919px] sm:w-[650px] w-[368px]">
     <img
-            src={`https://res.cloudinary.com/dws5jjmgt/image/upload/v1684004048/truhlarslama.cz/products/test_dub_lak_01/${data.id}_detail_02.jpg`}
+            src={data.detail_02}
             alt="detail02"
             width={mobile ? "323" : "540"}
             height={mobile ? "323" : "540"}
@@ -26,7 +26,7 @@
     </div>
 
     <img
-            src={`https://res.cloudinary.com/dws5jjmgt/image/upload/v1684004048/truhlarslama.cz/products/test_dub_lak_01/${data.id}_thumbnail.jpg`}
+            src={data.thumbnail}
             alt="thumbnail"
             width={mobile ? "323" : "540"}
             height={mobile ? "323" : "540"}
@@ -34,7 +34,7 @@
 
     <img
             class="mb-5"
-            src={`https://res.cloudinary.com/dws5jjmgt/image/upload/v1684004048/truhlarslama.cz/products/test_dub_lak_01/${data.id}_detail_01.jpg`}
+            src={data.detail_01}
             alt="detail01"
             width={mobile ? "323" : "540"}
             height={mobile ? "323" : "540"}
