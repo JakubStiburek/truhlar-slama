@@ -59,21 +59,21 @@
     }
 </script>
 
-<div class="mx-auto flex flex-col items-center justify-center xl:w-[1100px] sm:w-[650px] w-[368px] gap-2">
+<div class="mx-auto flex flex-col items-center justify-center gap-2 xl:w-[1100px] sm:w-[650px] w-[368px]">
     <p class="mt-2 text-center sm:text-2xl text-[0.8rem]">Prohlédněte si zboží připravené k odběru nebo kousky, které
         již mají majitele. Objednávejte telefonicky nebo emailem.</p>
-    <div class="flex sm:flex-row gap-2 items-center justify-end flex-col">
-        <button class="border p-1 rounded light-background"
+    <div class="flex flex-col items-center justify-end gap-2 sm:flex-row">
+        <button class="rounded border p-1 light-background"
                 on:click={switchSorting(SortBy.Price)}>
             Seřadit podle ceny
         </button>
-        <button class="border p-1 rounded light-background"
+        <button class="rounded border p-1 light-background"
                 on:click={switchSorting(SortBy.Amount)}>
             Seřadit podle
             dostupnosti
         </button>
     </div>
-    <div class="grid xl:grid-cols-3 gap-4 mt-5 mb-5 md:grid-cols-2 grid-cols-1">
+    <div class="mt-5 mb-5 grid grid-cols-1 gap-4 xl:grid-cols-3 md:grid-cols-2">
         {#each sortProducts(products, sortControl) as product}
             <a href={`/vyrobky/${product.id}`}>
                 <Item
