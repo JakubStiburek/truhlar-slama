@@ -13,11 +13,11 @@
 
 <div class="mx-auto mt-3 w-max grid grid-cols-1 justify-center items-center xl:grid-cols-2">
     <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-        <img class="w-[323px] sm:w-[540px]"
-             width={mobile ? "323" : "540"}
+        <img alt="night stand"
+             class="w-[323px] sm:w-[540px]"
              height={mobile ? "430.66" : "720"}
              src={mobile ? data.mobileImagesUrlList[0] : data.desktopImagesUrlList[0]}
-             alt="night stand">
+             width={mobile ? "323" : "540"}>
     </div>
     <div class="flex flex-col items-start justify-center p-6 sm:p-10">
         <h2 class="pb-3 text-left text-2xl text-black sm:text-3xl">
@@ -35,15 +35,20 @@
         <Contacts/>
     </div>
     {#if mobile}
-        {#each [...data.mobileImagesUrlList.slice(1), data.mobileImagesUrlList[0]] as imageSrc}
-            <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
-                <img class="w-[323px] sm:w-[540px]"
-                     width="323"
-                     height="430"
-                     src={imageSrc}
-                     alt="product image">
-            </div>
-        {/each}
+        <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
+            <img class="w-[323px] sm:w-[540px]"
+                 width="323"
+                 height="430"
+                 src={data.mobileImagesUrlList[2]}
+                 alt="product image">
+        </div>
+        <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
+            <img class="w-[323px] sm:w-[540px]"
+                 width="323"
+                 height="430"
+                 src={data.mobileImagesUrlList[data.mobileImagesUrlList.length - 1]}
+                 alt="product image">
+        </div>
     {:else}
         {#each [...data.desktopImagesUrlList.slice(1), data.desktopImagesUrlList[0]] as imageSrc}
             <div class="mx-auto flex h-max w-max flex-col items-center justify-center rounded img">
